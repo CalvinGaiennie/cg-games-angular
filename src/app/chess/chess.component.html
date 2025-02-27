@@ -1,0 +1,22 @@
+<h2>Chess</h2>
+<div class="chess-board ml-5">
+  <div *ngFor="let row of rows; let i = index" class="row">
+    <div
+      *ngFor="let col of cols; let j = index"
+      class="border border-dark p-3"
+      style="width: 9vw; height: 9vw"
+    >
+      <button
+        *ngIf="chessBoard[i][j] !== ''"
+        (click)="selectPiece(i, j)"
+        [ngClass]="{
+          selected: selectedPiece.row === i && selectedPiece.col === j
+        }"
+      >
+        {{ chessBoard[i][j] }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<p *ngIf="selectedPiece.name">Selected Piece: {{ selectedPiece.name }}</p>

@@ -1,0 +1,8 @@
+<nav *ngFor="let item of items">
+  <a
+    class="nav-link fs-4"
+    routerLink="{{ item.link }}"
+    routerLinkActive="active"
+    ><app-game-card [game]="item"></app-game-card
+  ></a>
+</nav>
