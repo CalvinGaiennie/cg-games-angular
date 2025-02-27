@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChessComponent } from './chess.component';
+import { GoComponent } from './go.component';
 
-describe('ChessComponent', () => {
-  let component: ChessComponent;
-  let fixture: ComponentFixture<ChessComponent>;
+describe('GoComponent', () => {
+  let component: GoComponent;
+  let fixture: ComponentFixture<GoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ChessComponent],
-    }).compileComponents();
+      imports: [GoComponent]
+    })
+    .compileComponents();
 
-    fixture = TestBed.createComponent(ChessComponent);
+    fixture = TestBed.createComponent(GoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

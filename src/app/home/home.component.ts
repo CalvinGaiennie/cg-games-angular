@@ -22,5 +22,17 @@ export class HomeComponent {
       link: '/sudoku',
       photo: 'assets/images/sudoku.png',
     },
+    {
+      name: 'Blackjack',
+      description: 'Here is an example description.',
+      link: '/blackjack',
+      photo: 'assets/images/blackjack.webp',
+    },
+    {
+      name: 'Go',
+      description: 'Here is an example description.',
+      link: '/go',
+      photo: 'assets/images/go.jpg',
+    },
   ];
 }
