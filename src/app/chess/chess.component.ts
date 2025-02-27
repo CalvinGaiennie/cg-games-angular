@@ -133,8 +133,41 @@ export class ChessComponent {
     return this.selectedPiece.row === row && this.selectedPiece.col === col;
   }
 
+  checkMove(row: number, col: number): boolean {
+    const selectedPiece =
+      this.chessBoard[this.selectedPiece.row][this.selectedPiece.col];
+    const targetPiece = this.chessBoard[row][col];
+
+    const currentCase = `${selectedPiece.name}${selectedPiece.color}`;
+    console.log(currentCase);
+    switch (currentCase) {
+      case 'PWhite':
+        if (
+          targetPiece.name === '' &&
+          row === this.selectedPiece.row + 1 &&
+          col === this.selectedPiece.col
+        ) {
+          return true;
+        }
+        return false;
+      case 'PBlack':
+        if (
+          targetPiece.name === '' &&
+          row === this.selectedPiece.row - 1 &&
+          col === this.selectedPiece.col
+        ) {
+          return true;
+        }
+        return false;
+      default:
+        return false;
+    }
+  }
+
   movePiece(row: number, col: number): void {
-    if (this.selectedPiece.name) {
+    if (!this.checkMove(row, col)) {
+      return;
+    } else if (this.selectedPiece.name) {
       const targetPiece = this.chessBoard[row][col];
       const selectedColor =
         this.chessBoard[this.selectedPiece.row][this.selectedPiece.col].color;
