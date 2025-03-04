@@ -133,6 +133,7 @@ export class ChessComponent {
     return this.selectedPiece.row === row && this.selectedPiece.col === col;
   }
 
+  //need to finish building out this method
   checkMove(row: number, col: number): boolean {
     const selectedPiece =
       this.chessBoard[this.selectedPiece.row][this.selectedPiece.col];
